@@ -5,6 +5,8 @@ import theme from './theme'
 import SignIn from './pages/SignIn'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+import './mock';
+
 function App() {
   return (
     <ThemeProvider theme={theme}>

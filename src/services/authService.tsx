@@ -1,0 +1,27 @@
+import axios from '../utils/axios';
+
+class AuthService {
+
+    // Pesquisa no google "Promise javascript"
+    signIn(email: any, password: any) {
+        return new Promise((resolve, reject) => {
+            axios.post('/api/home/login', {email, password})
+            .then(response => {
+                if (response.data.user) {
+                    resolve(response.data.user)
+                } else {
+                    reject(response.data.error)
+                }
+            })
+            .catch(error => {
+                reject(error)
+            })
+        })
+    }
+}
+
+
+const authService = new AuthService();
+
+
+export default authService;
